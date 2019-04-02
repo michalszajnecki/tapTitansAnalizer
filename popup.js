@@ -86,6 +86,7 @@ function calculateTimes(gatheredData) {
 
 function updateStats(timestamp) {
     var data = localStorage.getItem(timestamp);
+    if (data == null) return console.warn('localstorage is null')
     data = JSON.parse(data);
     document.getElementById('statLvl').innerHTML = data.currentLvl;
     document.getElementById('statRunes').innerHTML = data.runes;

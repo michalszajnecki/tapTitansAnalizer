@@ -44,7 +44,7 @@ window.setInterval(function() {
 document.addEventListener('DOMContentLoaded', function() {
     chrome.webRequest.onBeforeRequest.addListener(
         function(details) {
-            if (details.url == "http://kong.timetravel.tap-adventure.com/c/user/update/") {
+            if (details.url == "https://kong.timetravel.tap-adventure.com/c/user/update/") {
                 data = JSON.parse(details.requestBody.formData.data[0]);
                 renderLevel(data);
                 saveToStorage(data);
